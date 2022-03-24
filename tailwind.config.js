@@ -11,9 +11,6 @@ module.exports = {
           'blue': 'rgb(15 118 110)',
           'yellow': 'rgb(251 191 36)',
           'purple': 'rgb(219 39 119)'
-        },
-        backgroundImage: {
-            'eclipse': 'url(../images/eclipseResize.jpg)'
         }
     },
   },

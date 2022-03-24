@@ -1,29 +1,25 @@
 import React from 'react';
 
 
+import MainHeader from '../tailwindComps/Hero'
+import SecondaryHeader from '../tailwindComps/SecondaryHeader'
 
 const Header = (props) => {
 
   const firstTitle = 'Small Business Web Design & Development'
-  const secondaryTitles = ['Product', 'Pricing', 'About', 'Blog', 'Store','Contact']
+  const secondaryTitle = 'Sign up'
 
 
-  const getSecondaryTitle = (curTitle) => {
-    for (let i=0;i<secondaryTitles.length;i++) {
-      if (curTitle === secondaryTitles[i]) {
-        return secondaryTitles[i]
-      }
-    }
-  }
-  const secondTitle = getSecondaryTitle(props.title)
   const HomeHeader = () => (
     <section class="headerPictureWrapper">
-\
+
+   <MainHeader />
+
     </section>
   )
   const SecondaryHeaderComp = () => (
     <section class="headerPictureWrapper">
-
+   <SecondaryHeader />
    </section>
   )
   const StoreHeader = () => (
@@ -39,12 +35,12 @@ const Header = (props) => {
   const SwitchHeader = () => {
     switch(props.title) {
         case firstTitle:
-          return <div>main header</div>
-        case secondTitle:
-          return 'secondary'
+          return <MainHeader />
+        case secondaryTitle:
+          return <SecondaryHeader title={props.title} text={props.text} />
 
         default:
-          return <div>default</div>
+          return <StoreHeader />
     }
   }
 return (

@@ -11,8 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet";
 
 import NavBar from "./NavBar";
-import Header from "../tailwindComps/Header";
+import Header from "./Header";
+import Footer from "../tailwindComps/Footer";
+import HeroComp from "../tailwindComps/Hero";
 
+import createComponent from '../commonComps/createCart'
 import "./layoutGrid.css"
 import "./layout.css"
 const Layout = ({children, title, text, pageLayout}) => {
@@ -45,10 +48,11 @@ const Layout = ({children, title, text, pageLayout}) => {
       >
 
        <div class="grid">
+        <Header title={title} text={text} />
 
 
         <main style={pageLayout}  class="main">{children}</main>
-
+        <Footer />
        </div>
       </div>
 

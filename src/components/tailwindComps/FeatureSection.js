@@ -1,56 +1,64 @@
 import React from 'react'
 
-import { CheckIcon } from '@heroicons/react/outline'
+import { CodeIcon, TagIcon, DatabaseIcon,TerminalIcon, UploadIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
+
 
 const features = [
   {
-    name: 'No code page building',
-    description: "The foundation of any platform is a no code builder, but ours is a little bit different because we don't have huge confusing menus.",
+    name: '100% Hand Coded',
+    description:
+    "All of our sites are made from scratch using our own code. This allows us full control over the design and functionality, leading to more traffic and conversions.",
+    icon: CodeIcon,
   },
   {
-    name: 'Higher conversions',
-    description: 'No more slow websites that turn away customers. Get more conversions more easily with our lightning fast load times that are perfect for products or services.',
+    name: 'Optimization',
+    description:
+      "The #1 reason visitors will leave a website is if it's slow to load. Our sites are lightning fast, accessible and SEO friendly to rank higher on Google and provide a better user experience.",
+    icon: LightningBoltIcon,
   },
   {
-    name: 'Beautiful components',
-    description: 'Get instant access to dozens of custom & mobile-friendly, pre-built  components and sections to easily create a site with excellent user experience that fits with your branding',
-  },
-  {
-    name: 'Quality customer support',
-    description: "With us, you can always get on the phone or chat with a real person that will have real solutions.",
-  },
-  {
-    name: 'More traffic',
-    description: 'Our sites get more traffic, leading to more conversions than other page builders because of the quality of our design & development.',
+    name: 'Subscription Pricing',
+    description:
+      "We use a unique subscription pricing model, so you enjoy no upfront costs, affordable packages and no hidden fees.",
+    icon: TagIcon,
   }
 ]
 
-export default function Example() {
-  return (
-    <div className="relative overflow-hidden -mt-72" style={{gridColumn:"span 7", gridRowStart:"second", gridRowEnd:"third"}}>
 
-      <div className="bg-white absolute z-20 top-20  h-64 w-full " style={{transform: 'skewY(9deg)'}} />
-    <div className="bg-transparent relative z-30 mt-36">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-blue">A better page builder</h2>
-          <p className="mt-4 text-lg text-gray-500">
-            Other platforms are a great starting point, but when you outgrow them, your options are limited. We are aiming to be the next step.
+const metricsImg = require('../../images/metrics.png')
+export default function FeatureSection() {
+  return (
+    <div className="pb-10 pt-16 -mb-8 -mt-20 pr-4 relative overflow-hidden bg-indigo-50" style={{gridColumn:"span 7", gridRowStart:"first", gridRowEnd:"second"}}>
+<div className="absolute z-0 left-52  opacity-40 transform rotate-90 scale-x-125 before:-skew-x-9 before:rounded-sm after:skew-x-9"  id="app"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center">
+          <h2 className="mt-4 text-base text-default font-semibold tracking-wide uppercase">websites by trevor</h2>
+          <p className="mt-2 relative z-10 max-w-3xl text-3xl leading-8 font-extrabold tracking-tight text-gray-900 lg:mx-auto">
+          The benefits of a one page website
+          </p>
+          <p className="mt-4 relative z-10 max-w-2xl text-xl text-gray-600 lg:mx-auto">
+          We are changing how small business web design and development is being done
+          with our hand coded websites that we offer as an affordable subscription to businesses like you.
           </p>
         </div>
-        <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-          {features.map((feature) => (
-            <div key={feature.name} className="relative">
-              <dt>
-                <CheckIcon className="absolute h-6 w-6 text-orange" aria-hidden="true" />
-                <p className="ml-9 text-lg leading-6 font-medium text-blue">{feature.name}</p>
-              </dt>
-              <dd className="mt-2 ml-9 text-base text-gray-600">{feature.description}</dd>
-            </div>
-          ))}
-        </dl>
+
+        <div className="mt-10">
+          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative">
+                <dt>
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <feature.icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                </dt>
+                <dd className="mt-2 ml-16 text-base text-gray-600">{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
-    </div>
     </div>
   )
 }
