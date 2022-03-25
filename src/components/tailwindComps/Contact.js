@@ -12,11 +12,21 @@ export default function Example() {
   const [agreed, setAgreed] = useState(false)
   const [confirm, setConfirm] = useState(false)
   const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
   const [email, setEmail] = useState('')
+  const [number, setNumber] = useState('')
+  const [hear, setHear] = useState('')
+  const [location, setLocation] = useState('')
+  const [industry, setIndustry] = useState('')
+  const [colors, setColors] = useState('')
+  const [message, setMessage] = useState('')
+
   const [validateName, setValidateName] = useState(undefined)
   const [validateEmail, setValidateEmail] = useState(undefined)
-  const [validateMessage, setValidateMessage] = useState(undefined)
+  const [validateNumber, setValidateNumber] = useState(undefined)
+  const [validateHear, setValidateHear] = useState(undefined)
+  const [validateLocation, setValidateLocation] = useState(undefined)
+  const [validateIndustry, setValidateIndustry] = useState(undefined)
+  const [validateColors, setValidateColors] = useState(undefined)
 
   const form = useRef()
 
@@ -34,12 +44,37 @@ const handleChange = (e) => {
           }
           setName(e.target.value)
           break;
-      case 'message':
-          if (validateMessage !== undefined) {
-              setValidateMessage(undefined)
+      case 'number':
+          if (validateNumber !== undefined) {
+              setValidateNumber(undefined)
           }
-          setMessage(e.target.value)
+          setNumber(e.target.value)
           break;
+      case 'location':
+          if (validateLocation !== undefined) {
+              setValidateLocation(undefined)
+          }
+          setLocation(e.target.value)
+          break;
+      case 'hear':
+            if (validateHear !== undefined) {
+                setValidateHear(undefined)
+            }
+            setHear(e.target.value)
+            break;
+      case 'industry':
+            if (validateIndustry !== undefined) {
+                setValidateIndustry(undefined)
+            }
+           setIndustry(e.target.value)
+           break;
+       case 'colors':
+           if (validateColors !== undefined) {
+               setValidateColors(undefined)
+           }
+           setColors(e.target.value)
+           break;
+
     }
 }
 const validateError = (label, which) => {
@@ -56,9 +91,19 @@ const validateError = (label, which) => {
      case email:
          setValidateEmail(errorMessage)
          break;
-      case message:
-          setValidateMessage(errorMessage)
+      case number:
+          setValidateNumber(errorMessage)
           break;
+      case location:
+          setValidateLocation(errorMessage)
+          break;
+      case industry:
+          setValidateIndustry(errorMessage)
+          break;
+      case colors:
+          setValidateColors(errorMessage)
+          break;
+
  }
 }
 const onSubmit = (e) => {
@@ -71,10 +116,23 @@ const onSubmit = (e) => {
           validateError(email, 'email')
           e.preventDefault()
           break;
-      case message:
-          validateError(message, 'message');
+          case number:
+            validateError(number, 'name');
+            e.preventDefault()
+            break;
+        case location:
+            validateError(location, 'email')
+            e.preventDefault()
+            break;
+            case industry:
+          validateError(industry, 'industry');
           e.preventDefault()
           break;
+      case colors:
+          validateError(colors, 'colors')
+          e.preventDefault()
+          break;
+
 
       default:
          /* setURL() */
@@ -194,7 +252,7 @@ const confirmMessage = ['Thanks for reaching out to Websites By Trevor!', 'We wi
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">
-                Phone Number
+                Phone Number (leave as US if country not listed) {validateNumber}
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 flex items-center">
@@ -222,9 +280,81 @@ const confirmMessage = ['Thanks for reaching out to Websites By Trevor!', 'We wi
               </div>
             </div>
             <div className="sm:col-span-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Where are you located? {validateLocation}
+              </label>
+              <div className="mt-1">
+                <input
+                  id="location"
+                  name="location"
+                  type="location"
+                  autoComplete="location"
+                  value={location}
+                  onChange={handleChange}
+                  key='location'
+                  placeholder="Enter location..."
+                  className="py-3 px-4 mb-6 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                How did you hear about us? {validateHear}
+              </label>
+              <div className="mt-1">
+                <input
+                  id="hear"
+                  name="hear"
+                  type="hear"
+                  autoComplete="hear"
+                  value={hear}
+                  onChange={handleChange}
+                  key='hear'
+                  placeholder="Enter how you heard about us..."
+                  className="py-3 px-4 mb-6 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                What industry are you in? {validateIndustry}
+              </label>
+              <div className="mt-1">
+                <input
+                  id="industry"
+                  name="industry"
+                  type="industry"
+                  autoComplete="industry"
+                  value={industry}
+                  onChange={handleChange}
+                  key='industry'
+                  placeholder="Enter industry..."
+                  className="py-3 px-4 mb-6 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="colors" className="block text-sm font-medium text-gray-700">
+                What colors do you want on your site? {validateEmail}
+              </label>
+              <div className="mt-1">
+                <input
+                  id="colors"
+                  name="colors"
+                  type="colors"
+                  autoComplete="colors"
+                  value={email}
+                  onChange={handleChange}
+                  key='colors'
+                  placeholder="Pick 2-3 colors..."
+                  className="py-3 px-4 mb-6 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
               <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Message
-              </label> {validateMessage}
+                Additional Notes
+              </label>
               <div className="mt-1">
                 <textarea
                   id="message"
@@ -233,7 +363,7 @@ const confirmMessage = ['Thanks for reaching out to Websites By Trevor!', 'We wi
                   value={message}
                   onChange={handleChange}
                   key='name'
-                  placeholder="Enter message..."
+                  placeholder="Feel free to add anything else you want us to know!"
                   className="py-3 px-4 mb-6 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
 
                 />

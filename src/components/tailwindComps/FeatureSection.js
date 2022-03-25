@@ -1,26 +1,32 @@
 import React from 'react'
 
-import { CodeIcon, TagIcon, DatabaseIcon,TerminalIcon, UploadIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
+import { CodeIcon, GlobeAltIcon,ArrowsExpandIcon,TagIcon, DatabaseIcon,TerminalIcon, UploadIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 
 
 const features = [
   {
-    name: '100% Hand Coded',
+    name: 'Expand your brand',
     description:
-    "All of our sites are made from scratch using our own code. This allows us full control over the design and functionality, leading to more traffic and conversions.",
-    icon: CodeIcon,
+    "Start marketing now. Most businesses that sign up for our free tier are very small and very new so it's a great way to start your online presence at no cost to you.",
+    icon: ArrowsExpandIcon,
   },
   {
-    name: 'Optimization',
+    name: 'Offer products and services',
     description:
-      "The #1 reason visitors will leave a website is if it's slow to load. Our sites are lightning fast, accessible and SEO friendly to rank higher on Google and provide a better user experience.",
-    icon: LightningBoltIcon,
+      "A full website is always ideal for the best user experience but we still focus on allowing you to offer all of your services and products in a user friendly way.",
+    icon: ScaleIcon,
   },
   {
-    name: 'Subscription Pricing',
+    name: 'Get connected',
     description:
-      "We use a unique subscription pricing model, so you enjoy no upfront costs, affordable packages and no hidden fees.",
-    icon: TagIcon,
+      "We will maintain open and consistent communication to help with your new website and allow you access to a wonderful developer.",
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'Get a free full website',
+    description:
+      "We have a referral system for our normal clients and we extend that to our free tier clients, which allows you a way to get a full website for free with just a handful of referrals if you like our work!",
+    icon: TerminalIcon,
   }
 ]
 
@@ -38,8 +44,7 @@ export default function FeatureSection() {
           The benefits of a one page website
           </p>
           <p className="mt-4 relative z-10 max-w-2xl text-xl text-gray-600 lg:mx-auto">
-          We are changing how small business web design and development is being done
-          with our hand coded websites that we offer as an affordable subscription to businesses like you.
+          Many people wonder why we would offer a free one page website and the answer is it helps people, it's a great way to network, grow our portfolio and help with our marketing. Here's how it can help you!
           </p>
         </div>
 
