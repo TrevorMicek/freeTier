@@ -56,7 +56,7 @@ export default function Header(props) {
           >
             <div className="h-20 w-auto  flex items-center flex-1">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="/">
+                <a href="https://websitesbytrevor.com/">
                   <span className="sr-only">Workflow</span>
                   <img
                     className="h-28 w-auto"
