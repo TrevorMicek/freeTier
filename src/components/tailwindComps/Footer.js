@@ -2,7 +2,7 @@ import React from 'react'
 
 const navigation = {
     main: [
-      { name: 'Home', href: 'https://websitesbytrevor.com/' },
+      { name: 'Main Site', href: 'https://websitesbytrevor.com/' },
       { name: 'Product', href: 'https://websitesbytrevor.com/product' },
       { name: 'Pricing', href: 'https://websitesbytrevor.com/pricing' },
       { name: 'Partnerships', href: 'https://partners.websitesbytrevor.com/' },
