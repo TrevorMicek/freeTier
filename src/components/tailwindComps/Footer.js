@@ -2,12 +2,12 @@ import React from 'react'
 
 const navigation = {
     main: [
-      { name: 'Home', href: '/' },
-      { name: 'Product', href: '/product' },
-      { name: 'Pricing', href: '/pricing' },
+      { name: 'Home', href: 'https://websitesbytrevor.com/' },
+      { name: 'Product', href: 'https://websitesbytrevor.com/product' },
+      { name: 'Pricing', href: 'https://websitesbytrevor.com/pricing' },
       { name: 'Partnerships', href: 'https://partners.websitesbytrevor.com/' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Contact', href: '/contact' }
+      { name: 'Blog', href: 'https://websitesbytrevor.com/blog' },
+      { name: 'Contact', href: 'https://websitesbytrevor.com/contact' }
     ],
     social: [
       {
